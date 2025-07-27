@@ -1,91 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cintas Lead Form</title>
+  <meta charset="UTF-8">
+  <title>Contact a Sales Manager</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f6fa;
-      padding: 30px;
-      color: #2f3640;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 60px;
     }
+
     h1 {
-      text-align: center;
-      color: #273c75;
+      color: #333;
     }
-    form {
-      max-width: 600px;
-      margin: auto;
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    label {
+
+    .button {
       display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 6px;
-      border: 1px solid #dcdde1;
-    }
-    button {
-      margin-top: 20px;
-      background-color: #44bd32;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
+      width: 300px;
+      margin: 20px;
+      padding: 15px;
+      text-align: center;
       font-size: 16px;
-      cursor: pointer;
+      color: white;
+      background-color: #007bff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
     }
-    button:hover {
-      background-color: #4cd137;
+
+    .button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-  <h1>Cintas Lead Submission Form</h1>
-  <form name="lead-form" method="POST" data-netlify="true" action="/submit">
-    <input type="hidden" name="form-name" value="lead-form">
-    <label for="partnerName">Partner Name:</label>
-    <input type="text" name="partnerName" required />
+  <h1>Contact a Sales Manager</h1>
 
-    <label for="partnerDivision">Partner Division:</label>
-    <input type="text" name="partnerDivision" required />
+  <a class="button" href="mailto:manager1@company.com?subject=First%20Aid%20Services%20Inquiry&body=Hi%20Manager%201%2C%0AI'm%20interested%20in%20your%20First%20Aid%20Services.%20Please%20contact%20me%20with%20more%20information.">
+    First Aid Division – Manager 1
+  </a>
 
-    <label for="divisionProduct">Division/Product Interested In:</label>
-    <input type="text" name="divisionProduct" required />
+  <a class="button" href="mailto:manager2@company.com?subject=AED%20Program%20Inquiry&body=Hi%20Manager%202%2C%0AI'm%20interested%20in%20learning%20more%20about%20your%20AED%20program.%20Please%20get%20in%20touch.">
+    AED Division – Manager 2
+  </a>
 
-    <label for="companyName">Company Name:</label>
-    <input type="text" name="companyName" required />
-
-    <label for="decisionMaker">Decision Maker Name:</label>
-    <input type="text" name="decisionMaker" required />
-
-    <label for="address">Address:</label>
-    <input type="text" name="address" required />
-
-    <label for="decisionMakerEmail">Email of Decision Maker:</label>
-    <input type="email" name="decisionMakerEmail" required />
-
-    <label for="decisionMakerPhone">Phone # of Decision Maker:</label>
-    <input type="text" name="decisionMakerPhone" required />
-
-    <label for="date">Date:</label>
-    <input type="date" name="date" required />
-
-    <label for="notes">Notes:</label>
-    <textarea name="notes" rows="3"></textarea>
-
-    <button type="submit">Submit</button>
-  </form>
+  <a class="button" href="mailto:manager3@company.com?subject=Safety%20Supplies%20Request&body=Hi%20Manager%203%2C%0AI'd%20like%20to%20learn%20more%20about%20your%20safety%20supplies.%20Please%20follow%20up.">
+    Safety Supplies Division – Manager 3
+  </a>
 </body>
 </html>
-
