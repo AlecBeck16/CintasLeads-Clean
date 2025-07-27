@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cintas Lead Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      padding: 30px;
+      color: #2f3640;
+    }
+    h1 {
+      text-align: center;
+      color: #273c75;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #dcdde1;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #44bd32;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4cd137;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cintas Lead Submission Form</h1>
+  <form name="lead-form" method="POST" data-netlify="true" action="/submit">
+    <input type="hidden" name="form-name" value="lead-form">
+    <label for="partnerName">Partner Name:</label>
+    <input type="text" name="partnerName" required />
+
+    <label for="partnerDivision">Partner Division:</label>
+    <input type="text" name="partnerDivision" required />
+
+    <label for="divisionProduct">Division/Product Interested In:</label>
+    <input type="text" name="divisionProduct" required />
+
+    <label for="companyName">Company Name:</label>
+    <input type="text" name="companyName" required />
+
+    <label for="decisionMaker">Decision Maker Name:</label>
+    <input type="text" name="decisionMaker" required />
+
+    <label for="address">Address:</label>
+    <input type="text" name="address" required />
+
+    <label for="decisionMakerEmail">Email of Decision Maker:</label>
+    <input type="email" name="decisionMakerEmail" required />
+
+    <label for="decisionMakerPhone">Phone # of Decision Maker:</label>
+    <input type="text" name="decisionMakerPhone" required />
+
+    <label for="date">Date:</label>
+    <input type="date" name="date" required />
+
+    <label for="notes">Notes:</label>
+    <textarea name="notes" rows="3"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
+
