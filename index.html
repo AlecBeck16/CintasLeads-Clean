@@ -7,84 +7,121 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f6fa;
-      padding: 30px;
-      color: #2f3640;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 40px;
     }
-    h1 {
-      text-align: center;
-      color: #273c75;
-    }
-    form {
+
+    .container {
       max-width: 600px;
       margin: auto;
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
+
+    h2 {
+      text-align: center;
+      color: #003764;
+      margin-bottom: 24px;
+    }
+
     label {
       display: block;
       margin-top: 15px;
+      margin-bottom: 5px;
       font-weight: bold;
     }
+
     input, select, textarea {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
+      margin-top: 2px;
+      border: 1px solid #ccc;
       border-radius: 6px;
-      border: 1px solid #dcdde1;
+      box-sizing: border-box;
+      font-size: 14px;
     }
+
     button {
-      margin-top: 20px;
-      background-color: #44bd32;
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background-color: #003764;
       color: white;
       border: none;
-      padding: 12px;
       border-radius: 6px;
       font-size: 16px;
       cursor: pointer;
     }
+
     button:hover {
-      background-color: #4cd137;
+      background-color: #0050a0;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <h1>Cintas Lead Submission Form</h1>
-  <form name="lead-form" method="POST" data-netlify="true" action="/submit">
-    <input type="hidden" name="form-name" value="lead-form">
-    <label for="partnerName">Partner Name:</label>
-    <input type="text" name="partnerName" required />
+  <div class="container">
+    <h2>Submit a Lead – Cintas</h2>
+    <form name="lead-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="lead-form" />
+      <input type="hidden" name="bot-field" />
 
-    <label for="partnerDivision">Partner Division:</label>
-    <input type="text" name="partnerDivision" required />
+      <label for="partnerName">Your Name</label>
+      <input type="text" id="partnerName" name="partnerName" required />
 
-    <label for="divisionProduct">Division/Product Interested In:</label>
-    <input type="text" name="divisionProduct" required />
+      <label for="partnerDivision">Your Division</label>
+      <input type="text" id="partnerDivision" name="partnerDivision" required />
 
-    <label for="companyName">Company Name:</label>
-    <input type="text" name="companyName" required />
+      <label for="submitterEmail">Your Email</label>
+      <input type="email" id="submitterEmail" name="submitterEmail" required />
 
-    <label for="decisionMaker">Decision Maker Name:</label>
-    <input type="text" name="decisionMaker" required />
+      <label for="submitterPhone">Your Phone</label>
+      <input type="tel" id="submitterPhone" name="submitterPhone" required />
 
-    <label for="address">Address:</label>
-    <input type="text" name="address" required />
+      <label for="divisionProduct">Division/Product Interested In</label>
+      <select id="divisionProduct" name="divisionProduct" required>
+        <option value="" disabled selected>Select One</option>
+        <option value="First Aid and Safety – Gerardo Campos">First Aid and Safety – Gerardo Campos</option>
+        <option value="Fire – Eryn Cohen">Fire – Eryn Cohen</option>
+        <option value="Rental and Facility (Miramar) – Ryan Camara">Rental and Facility (Miramar) – Ryan Camara</option>
+        <option value="Rental and Facility (Vista) – Jorge Raygoza">Rental and Facility (Vista) – Jorge Raygoza</option>
+        <option value="Rental and Facility (Downtown SD) – Matthew Scott">Rental and Facility (Downtown SD) – Matthew Scott</option>
+      </select>
 
-    <label for="decisionMakerEmail">Email of Decision Maker:</label>
-    <input type="email" name="decisionMakerEmail" required />
+      <label for="companyName">Company Name</label>
+      <input type="text" id="companyName" name="companyName" required />
 
-    <label for="decisionMakerPhone">Phone # of Decision Maker:</label>
-    <input type="text" name="decisionMakerPhone" required />
+      <label for="decisionMaker">Decision Maker Name</label>
+      <input type="text" id="decisionMaker" name="decisionMaker" required />
 
-    <label for="date">Date:</label>
-    <input type="date" name="date" required />
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" required />
 
-    <label for="notes">Notes:</label>
-    <textarea name="notes" rows="3"></textarea>
+      <label for="decisionMakerEmail">Decision Maker Email</label>
+      <input type="email" id="decisionMakerEmail" name="decisionMakerEmail" required />
 
-    <button type="submit">Submit</button>
-  </form>
+      <label for="decisionMakerPhone">Decision Maker Phone</label>
+      <input type="tel" id="decisionMakerPhone" name="decisionMakerPhone" required />
+
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" rows="4"></textarea>
+
+      <button type="submit">Submit Lead</button>
+    </form>
+
+    <div class="footer">Cintas | Lead Sharing Form</div>
+  </div>
 </body>
 </html>
