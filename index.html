@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cintas Lead Form</title>
+</head>
+<body>
+  <h1>Submit a Lead</h1>
+
+  <form 
+    name="lead-form" 
+    method="POST" 
+    data-netlify="true" 
+    netlify-honeypot="bot-field" 
+    action="/.netlify/functions/submit-lead"
+  >
+    <input type="hidden" name="form-name" value="lead-form" />
+    
+    <p hidden>
+      <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+    </p>
+
+    <p>
+      Your Email: <input type="email" name="submitterEmail" required />
+    </p>
+    <p>
+      Your Phone #: <input type="tel" name="submitterPhone" required />
+    </p>
+    <p>
+      Partner Name: <input type="text" name="partnerName" required />
+    </p>
+    <p>
+      Partner Division: <input type="text" name="partnerDivision" required />
+    </p>
+    <p>
+      Division/Product Interested In:
+      <select name="divisionProduct" required>
+        <option value="">-- Select One --</option>
+        <option value="First Aid and Safety – Gerardo Campos">First Aid and Safety – Gerardo Campos</option>
+        <option value="Fire – Eryn Cohen">Fire – Eryn Cohen</option>
+        <option value="Rental and Facility (Miramar) – Ryan Camara">Rental and Facility (Miramar) – Ryan Camara</option>
+        <option value="Rental and Facility (Vista) – Jorge Raygoza">Rental and Facility (Vista) – Jorge Raygoza</option>
+        <option value="Rental and Facility (Downtown SD) – Matthew Scott">Rental and Facility (Downtown SD) – Matthew Scott</option>
+      </select>
+    </p>
+    <p>
+      Company Name: <input type="text" name="companyName" required />
+    </p>
+    <p>
+      Decision Maker Name: <input type="text" name="decisionMaker" required />
+    </p>
+    <p>
+      Address: <input type="text" name="address" required />
+    </p>
+    <p>
+      Email of Decision Maker: <input type="email" name="decisionMakerEmail" required />
+    </p>
+    <p>
+      Phone # of Decision Maker: <input type="tel" name="decisionMakerPhone" required />
+    </p>
+    <p>
+      Date: <input type="date" name="date" required />
+    </p>
+    <p>
+      Notes: <textarea name="notes"></textarea>
+    </p>
+    <p>
+      <button type="submit">Submit Lead</button>
+    </p>
+  </form>
+</body>
+</html>
